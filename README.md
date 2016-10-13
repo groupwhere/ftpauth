@@ -1,6 +1,20 @@
 # ftpauth
 AD Auth module for pure-ftpd in PHP
 
+This assumes that your user accounts have the following unix attributes, which should be possible without schema modification, but ymmv:
+
+	uidNumber
+	gidNumber
+	unixHomeDirectory
+
+As designed, it will attempt to find those values after binding as the user.  If it cannot find those values, it will default to:
+
+	uidNumber = 10000
+	gidNumber = 100
+	unixHomeDirectory = /nomansland
+
+The default directory should either be unavailable or it could be a default common directory if you wish.  If you want users to be able to upload and delete, be sure to set directory permissions to match the defaults for uidNumber and gidNumber.
+
 Edit the script to adjust for your AD domain and base_dn to search:
 
 	$domain = 'domain.tld';
