@@ -7,7 +7,11 @@ This assumes that your user accounts have the following unix attributes, which s
 	gidNumber
 	unixHomeDirectory
 
-As designed, it will attempt to find those values after binding as the user.  If it cannot find those values, it will default to:
+As designed, it will attempt to find those values after binding as the user.  If it cannot find those values, it will default to the list below.
+
+The user must be enabled.  This is determined by the search_filter variable, which contains a common value for userAccountControl which should include any case of an enabled user account.  You can leave this out if you want to auth everyone for some reason.
+
+Default values:
 
 	uidNumber = 10000
 	gidNumber = 100
