@@ -1,7 +1,13 @@
 # ftpauth
 AD Auth module for pure-ftpd in PHP
 
-This assumes that your user accounts have the following unix attributes, which should be possible without schema modification, but ymmv:
+First, note the shebang line for php which includes a specific ini file.  This is optional, but whichever ini file is used, it should enable the following:
+
+	variables_order = "EGPCS"
+
+In any event, that setting should contain 'E' so that environment variables are registered.  This is required for use with pure-authd.
+
+The script assumes that your user accounts have the following unix attributes, which should be possible without schema modification, but ymmv:
 
 	uidNumber
 	gidNumber
