@@ -27,6 +27,7 @@
 	$debug = False;
 	$defaultuid = 10000;
 	$defaultgid = 100;
+	$defaultdir = '/nomansland';
 
 	// START LDAP CONNECTION SETUP
 	$domain = 'domain.tld';
@@ -98,7 +99,7 @@
 
 				// Use the real dir from AD, or failover to a non-existent dir.
 				// User will fail to complete login as a result.
-				$dir = @$entry[0]['unixhomedirectory'][0] ? $entry[0]['unixhomedirectory'][0] : '/nomansland';
+				$dir = @$entry[0]['unixhomedirectory'][0] ? $entry[0]['unixhomedirectory'][0] : $defaultdir;
 
 				if($debug)
 				{
