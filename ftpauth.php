@@ -83,7 +83,10 @@
 			$search_filter = '(!(userAccountControl:1.2.840.113556.1.4.803:=2))';
 			$sr = ldap_search($ldap,$base_dn,"(&(samaccountname=$user)$search_filter)",array('dn','uidNumber','unixHomeDirectory','gidNumber'));
 			$entry = ldap_get_entries($ldap, $sr);
-			fwrite($fp, print_r($entry, True));
+			//if($debug)
+			//{
+			//	fwrite($fp, print_r($entry, True));
+			//}
 			if(@$entry['count'] > 0)
 			{
 				$uid = @$entry[0]['uidnumber'][0] ? $entry[0]['uidnumber'][0] : $defaultuid;
