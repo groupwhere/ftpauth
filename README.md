@@ -1,7 +1,7 @@
 # ftpauth
 AD Auth module for pure-ftpd in PHP
 
-First, note the shebang line for php which includes a specific ini file.  This is optional, but whichever ini file is used, it should enable the following:
+First, note the shebang line (first line) for php which includes a specific ini file.  This is optional, but whichever ini file is used, it should enable the following:
 
 	variables_order = "EGPCS"
 
