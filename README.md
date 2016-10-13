@@ -13,7 +13,7 @@ The script assumes that your user accounts have the following unix attributes, w
 	gidNumber
 	unixHomeDirectory
 
-As designed, it will attempt to find those values after binding as the user.  If it cannot find those values, defaults are also set in the script (edit this near the top as desired).
+As designed, it will attempt to find those values after binding as the user.  If it cannot find those values, defaults are also set in the script (edit this near the top as desired).  However, it first tries to find the gidNumber of the local group, ftp.
 
 The user must be enabled.  This is determined by the search_filter variable, which contains a common value for userAccountControl which should include any case of an enabled user account.  You can leave this out if you want to auth everyone for some reason.
 
