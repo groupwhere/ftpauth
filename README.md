@@ -1,6 +1,8 @@
 # ftpauth
 AD Auth module for pure-ftpd in PHP
 
+Requires the php-posix and php-ldap extensions.  Depending on your distribution, php-posix might be available via the php-process package.
+
 First, note the shebang line (first line) for php which includes a specific php.ini file.  This is optional, but whichever php.ini file is used, it should enable the following:
 
 	variables_order = "EGPCS"
